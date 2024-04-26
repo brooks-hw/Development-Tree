@@ -1,0 +1,10 @@
+The Tree needs to provide the following functionality:
+ - One root 
+ - After root sub-directories can have unlimited children
+ - Insert (node) / Delete (node) / getParentDirectory () / 'dir' lists current directory
+ - Tree creation adds info to a text file and retreives to build tree
+
+For Insert:
+ - The current directory must be known (using getParent)
+ - Individual element is added to child vector
+ - 
