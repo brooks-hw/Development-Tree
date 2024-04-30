@@ -4,20 +4,21 @@
 #include <iostream>
 #include <vector>
 using std::string;
+using std::cout;
 
 class TreeNode {
 private: 
-	std::vector<string> data;
+	std::string data;
 	std::vector<TreeNode*> children;
 	TreeNode* parent;
 
 public:
 	TreeNode();
-	TreeNode(std::vector<string> data, TreeNode* parent, std::vector<TreeNode*> children);
+	TreeNode(string data, TreeNode* parent);
 
-	void setData();
-	std::vector<TreeNode*> getData();
-	std::vector<TreeNode*> getChildren();
+	void setData(string data);
+	string getData();
+	std::vector<TreeNode*>& getChildren();
 	TreeNode* getParent();
 
 };

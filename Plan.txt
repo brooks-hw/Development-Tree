@@ -1,3 +1,25 @@
+TreeNodes (individual):
+ - Each contain
+  - A piece of data (single string for now)
+  - A parent pointer
+  - A pointer to a child vector (vector contains other TreeNodes)
+ * The root node's parent will be set to nullptr (how it will be differentiated/found)
+ Methods:
+  + Getters/Setters
+  + getParent() 
+  
+
+Menu:
+ Commands - 
+   dir - list all entries in current directory
+   cd - change directory (use form C:/Users/Brooks)
+   mkdir - creates a new directory
+   touch - create a new entry in the current directory
+   delete - deletes entered entry
+   return - regresses current directory by 1 (unless its the root ~directory)
+
+
+
 The Tree needs to provide the following functionality:
  - One root 
  - After root sub-directories can have unlimited children
@@ -8,3 +30,4 @@ For Insert:
  - The current directory must be known (using getParent)
  - Individual element is added to child vector
  - 
+
