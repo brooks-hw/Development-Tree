@@ -1,8 +1,9 @@
 ﻿#include <iostream>
+#include "Utility.h"
 #include "Menu.h"
 #include "Tree.h"
 
 int main() {
-    int choice = displayMenu();
+    string choice = displayMenu();
 }
 
