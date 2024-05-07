@@ -3,17 +3,19 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using std::string;
 using std::cout;
 
 class TreeNode {
-private: 
+private:
 	std::string data;
 	std::vector<TreeNode*> children;
 	TreeNode* parent;
 
 public:
 	TreeNode();
+	TreeNode(string data);
 	TreeNode(string data, TreeNode* parent);
 
 	void setData(string data);

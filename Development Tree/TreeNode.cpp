@@ -5,6 +5,11 @@ TreeNode::TreeNode() {
 	this->parent = nullptr;
 }
 
+TreeNode::TreeNode(string data) {		//constructor for only the root directory
+	this->data = data;
+	this->parent = nullptr;
+}
+
 TreeNode::TreeNode(string data, TreeNode* parent) {
 	this->data = data;
 	this->parent = parent;

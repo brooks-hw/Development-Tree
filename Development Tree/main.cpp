@@ -4,6 +4,9 @@
 #include "Tree.h"
 
 int main() {
-    string choice = displayMenu();
+    
+    Tree* rootDirectory = initializeDirectories();
+    //gatherInput(rootDirectory);
+    delete rootDirectory;
 }
 

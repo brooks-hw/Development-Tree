@@ -1,5 +1,8 @@
 #include "Utility.h"
 
-Tree initializeTree() {
+Tree* initializeDirectories() {
 	Tree* rootDirectory = new Tree();
+	TreeNode* FuckYouVisualStudio = new TreeNode(" ");
+
+	return rootDirectory;
 }

@@ -5,7 +5,7 @@
 using std::cout;
 using std::string;
 
-string displayMenu();
+//void gatherInput(Tree* &rootDirectory);
 
 
 

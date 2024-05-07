@@ -1,5 +1,6 @@
 #include "Menu.h"
 
+/*
 string displayMenu() {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 	cout << "|  Welcome to the Tree manager, please     |\n";
@@ -12,8 +13,8 @@ string displayMenu() {
 	return " ";
 }
 
-/*
-int gatherInput() {
+
+void gatherInput(Tree*& rootDirectory) {
 
 }
 */
