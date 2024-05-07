@@ -1,20 +1,31 @@
 #include "Menu.h"
 
-/*
-string displayMenu() {
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-	cout << "|  Welcome to the Tree manager, please     |\n";
-	cout << "|   enter a command:                       |\n";
-	cout << "|                                          |\n";
-	cout << "|  - dir : view all in current directory   |\n";
-	cout << "|  - mkdir : create new directory          |\n";
-	cout << "|  - cd : change directory                 |\n"; 
-	cout << "|  - touch \'Entry Name\' : create entry     |\n";
-	return " ";
+void handleInput(Tree*& rootDirectory) {
+	std::string userInput;
+	TreeNode* currDirectory = rootDirectory->getRoot();
+	while (true) {
+		writeCurrentDirectory(currDirectory);
+		std::getline(std::cin, userInput);
+		int choice = convertInput(userInput);
+	}
 }
 
+int convertInput(string userInput) {
+	if (userInput == "mkdir") {
 
-void gatherInput(Tree*& rootDirectory) {
-
+	}
 }
-*/
+
+void writeCurrentDirectory(TreeNode*& currDirectory) {
+	std::stack<string> directoryList;
+	while (currDirectory->getData() != "~") {
+		directoryList.push(currDirectory->getData());
+		currDirectory = currDirectory->getParent();
+	}
+	std::cout << " ~";
+	while (!directoryList.empty()) {
+		std::cout << "/" << directoryList.top();
+		directoryList.pop();
+	}
+	cout << "\n$ ";
+}

@@ -27,9 +27,6 @@
     <ClCompile Include="Utility.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="FuckYou.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="TreeNode.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -42,9 +39,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuckYou.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TreeNode.h">

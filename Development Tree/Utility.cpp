@@ -2,7 +2,7 @@
 
 Tree* initializeDirectories() {
 	Tree* rootDirectory = new Tree();
-	TreeNode* FuckYouVisualStudio = new TreeNode(" ");
-
+	TreeNode* root = new TreeNode("~");
+	rootDirectory->setRoot(root);
 	return rootDirectory;
 }

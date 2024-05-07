@@ -27,6 +27,10 @@ std::vector<TreeNode*>& TreeNode::getChildren() {
 	return this->children;
 }
 
+void TreeNode::addChild(TreeNode*& child) {
+	this->children.push_back(child);
+}
+
 TreeNode* TreeNode::getParent() {
 	return this->parent;
 }
