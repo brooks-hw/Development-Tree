@@ -29,7 +29,7 @@ void handleInput(string userInput, TreeNode*& currDirectory) {
 		command = userInput.substr(0, userInput.find(" "));
 		argument = userInput.substr(userInput.find(" ") + 1);
 	}
-	else {
+	else {		//command contains no spaces indicating its just a listing command
 		command = userInput;
 	}
 
@@ -42,6 +42,12 @@ void handleInput(string userInput, TreeNode*& currDirectory) {
 	}
 	case 2: {	//(dir) lists all the current children under the current directory
 		currDirectory->listChildren();
+		return;
+	}
+	case 4: {
+		TreeNode* newDirectory = currDirectory->changeDirectory(argument);
+		currDirectory = newDirectory;
+		return;
 	}
 	}
 }
@@ -85,7 +91,7 @@ string processCommand(string userInput) {
 
 bool checkValid(string command) {	
 	//command validity is checked before input is handled, therefore we won't have to worry about it during processing
-	if (command == "mkdir" || "dir") {
+	if (command == "mkdir" || "dir" || "cd") {
 		return true;
 	}
 	else return false;

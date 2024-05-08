@@ -7,6 +7,7 @@ int main() {
     
     TreeNode* root = new TreeNode("~");     //create root directory 
     TreeNode* currDirectory = root;
+    initializeTree(root);
 
     while (true) {
         string userInput = gatherInput(currDirectory);
