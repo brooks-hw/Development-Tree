@@ -2,9 +2,8 @@
 #define UTILITY_H
 
 
-#include "Tree.h"
+#include "TreeNode.h"
 
-Tree* initializeDirectories();
 
 
 

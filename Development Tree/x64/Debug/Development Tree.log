@@ -1,4 +1,3 @@
-﻿  Menu.cpp
-  main.cpp
-  Generating Code...
-  Development Tree.vcxproj -> C:\Users\B103-3D\Desktop\Development-Tree\x64\Debug\Development Tree.exe
+﻿  Input.cpp
+C:\Users\Brooks\Desktop\Compsci\C++\Development-Tree\Development Tree\Input.cpp(5,7): warning C4101: 'validCommand': unreferenced local variable
+  Development Tree.vcxproj -> C:\Users\Brooks\Desktop\Compsci\C++\Development-Tree\x64\Debug\Development Tree.exe

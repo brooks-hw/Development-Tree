@@ -21,9 +21,10 @@ public:
 	void setData(string data);
 	string getData();
 	std::vector<TreeNode*>& getChildren();
-	void addChild(TreeNode* &child);
 	TreeNode* getParent();
 
+	void addNode(string data);
+	void listChildren();
 };
 
 #endif

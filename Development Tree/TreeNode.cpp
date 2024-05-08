@@ -27,10 +27,21 @@ std::vector<TreeNode*>& TreeNode::getChildren() {
 	return this->children;
 }
 
-void TreeNode::addChild(TreeNode*& child) {
-	this->children.push_back(child);
-}
-
 TreeNode* TreeNode::getParent() {
 	return this->parent;
+}
+
+void TreeNode::addNode(string data) {	
+	//new directory is created with data, parent is set to 'this' which is memory address of called object
+	TreeNode* newDirectory = new TreeNode(data, this);
+	this->children.push_back(newDirectory);
+	cout << "\n";
+}
+
+void TreeNode::listChildren() {
+	//simply output data in 'children' vector
+	for (int i = 0; i < children.size(); ++i) {
+		std::cout << "-" << children[i]->getData() << std::endl;
+	}
+	cout << "\n";
 }

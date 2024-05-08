@@ -1,25 +1,20 @@
 ﻿#include <iostream>
 #include "Utility.h"
-#include "Menu.h"
-#include "Tree.h"
+#include "Input.h"
+#include "TreeNode.h"
 
 int main() {
     
-    Tree* rootDirectory = initializeDirectories();
-    handleInput(rootDirectory);
-    /*
-    TreeNode* child1 = new TreeNode("directory1", rootDirectory->getRoot());
-    TreeNode* root = rootDirectory->getRoot();
-    root->addChild(child1);
-    */
-    //example of adding a child 
+    TreeNode* root = new TreeNode("~");     //create root directory 
+    TreeNode* currDirectory = root;
 
-    /*
     while (true) {
-        gatherInput(rootDirectory);
+        string userInput = gatherInput(currDirectory);
+        handleInput(userInput, currDirectory);
     }
-    */
 
-    delete rootDirectory;
+    delete root;
+    
+
 }
 
