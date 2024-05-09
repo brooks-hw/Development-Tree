@@ -47,20 +47,25 @@ void handleInput(string userInput, TreeNode*& currDirectory) {
 	case 4: {
 		TreeNode* newDirectory = currDirectory->changeDirectory(argument);
 		currDirectory = newDirectory;
+		std::vector<TreeNode*> children = newDirectory->getChildren();
+		for (int i = 0; i < children.size(); ++i) {
+			std::cout << children[i]->getData() << "\n";
+		}
 		return;
 	}
 	}
 }
 
-void writeCurrDirectory(TreeNode*& currDirectory) {
+void writeCurrDirectory(TreeNode* currDirectory) {
 	//start with some fun system user text (even tho its not real)
 	std::cout << "Brooks@DESKTOP-6TCKLMF Dev-Tree";
 	std::stack<string> directoryList;
 
+	TreeNode* tempDirectory = currDirectory;
 	//a stack is used in order to be able to "reverse" the elements (because we start with our currentDirectory and work up)
-	while (currDirectory->getData() != "~") {	//elements are added until root directory is reached
-		directoryList.push(currDirectory->getData());
-		currDirectory = currDirectory->getParent();
+	while (tempDirectory->getData() != "~") {	//elements are added until root directory is reached
+		directoryList.push(tempDirectory->getData());
+		tempDirectory = tempDirectory->getParent();
 	}
 	std::cout << " ~";	
 	while (!directoryList.empty()) {	//starting with the root, output all parent directories up until currDirectory
