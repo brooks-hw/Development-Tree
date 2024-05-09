@@ -1,3 +1,10 @@
 ﻿  Input.cpp
-C:\Users\Brooks\Desktop\Compsci\C++\Development-Tree\Development Tree\Input.cpp(5,7): warning C4101: 'validCommand': unreferenced local variable
-  Development Tree.vcxproj -> C:\Users\Brooks\Desktop\Compsci\C++\Development-Tree\x64\Debug\Development Tree.exe
+C:\Users\brook\Desktop\C++ Projects\Development-Tree\Development Tree\Input.cpp(5,7): warning C4101: 'validCommand': unreferenced local variable
+  main.cpp
+  TreeNode.cpp
+  Utility.cpp
+  Generating Code...
+C:\Users\brook\Desktop\C++ Projects\Development-Tree\Development Tree\Utility.cpp(46): warning C4715: 'navigateToDirectory': not all control paths return a value
+C:\Users\brook\Desktop\C++ Projects\Development-Tree\Development Tree\TreeNode.cpp(61): warning C4715: 'TreeNode::changeDirectory': not all control paths return a value
+  LINK : C:\Users\brook\Desktop\C++ Projects\Development-Tree\x64\Debug\Development Tree.exe not found or not built by the last incremental link; performing full link
+  Development Tree.vcxproj -> C:\Users\brook\Desktop\C++ Projects\Development-Tree\x64\Debug\Development Tree.exe
