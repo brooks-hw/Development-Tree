@@ -17,6 +17,7 @@ void initializeTree(TreeNode* &root) {
 		else {		//otherwise the current entry's parent already exists in the tree and we must navigate to it update currentDirectory
 			currentDirectory = navigateToDirectory(root, parent);
 			TreeNode* newNode = new TreeNode(data, currentDirectory);
+			currentDirectory->addChild(newNode);
 		}
 	}
 
