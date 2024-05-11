@@ -17,13 +17,14 @@ string gatherInput(TreeNode*& currDirectory) {
 			return userInput;
 		}
 		else {
-			cout << "Invalid command please try again\n\n";
+			cout << "Error: \"" << command << "\" is not a valid command\n\n";
 		}
 	}
 }
 
-void handleInput(string userInput, TreeNode*& currDirectory) {
+bool handleInput(string userInput, TreeNode*& currDirectory) {
 	string command, argument;
+
 	//determine if the command contains an argument or is simply a listing command
 	if (userInput.find(" ") != std::string::npos) {
 		command = userInput.substr(0, userInput.find(" "));
@@ -35,23 +36,29 @@ void handleInput(string userInput, TreeNode*& currDirectory) {
 
 	//command is then passed to getChoice() to determine which operation to carry out
 	int choice = getChoice(command);
+
 	switch (choice) {
-	case 1: {	//(mkdir) adds a new directory under the current. Note* doesn't change currDirectory
-		currDirectory->addNode(argument);
-		return;
+	case 0: {
+		cout << "\nExiting...";
+		return false;
 	}
-	case 2: {	//(dir) lists all the current children under the current directory
+	case 1: {	//(mkdir) 
+		TreeNode* newDirectory = currDirectory->addNode(argument);		//create new node with current argument
+		writeToFile(newDirectory);			//write node's data to TreeData.txt
+		return true;
+	}
+	case 2: {	//(dir) 
 		currDirectory->listChildren();
-		return;
+		return true;
 	}
-	case 4: {
+	case 4: {	//(cd)
 		TreeNode* newDirectory = currDirectory->changeDirectory(argument);
-		currDirectory = newDirectory;
-		std::vector<TreeNode*> children = newDirectory->getChildren();
-		for (int i = 0; i < children.size(); ++i) {
-			std::cout << children[i]->getData() << "\n";
+		//nullptr indicates argument doesn't exist in this directory
+		if (newDirectory != nullptr) {
+			currDirectory = newDirectory;
 		}
-		return;
+		else std::cout << "Error \"" << argument << "\" does not exist in this directory\n\n";
+		return true;
 	}
 	}
 }
@@ -77,7 +84,8 @@ void writeCurrDirectory(TreeNode* currDirectory) {
 
 int getChoice(string command) {
 	//function to process command into integer request
-	if (command == "mkdir") return 1;
+	if (command == "quit") return 0;
+	else if (command == "mkdir") return 1;
 	else if (command == "dir") return 2;
 	else if (command == "find") return 3;
 	else if (command == "cd") return 4;
@@ -96,7 +104,7 @@ string processCommand(string userInput) {
 
 bool checkValid(string command) {	
 	//command validity is checked before input is handled, therefore we won't have to worry about it during processing
-	if (command == "mkdir" || "dir" || "cd") {
+	if (command == "quit" || command == "mkdir" || command == "dir" || command == "cd") {
 		return true;
 	}
 	else return false;

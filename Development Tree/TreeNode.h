@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
 using std::string;
 using std::cout;
 
@@ -24,7 +25,7 @@ public:
 	TreeNode* getParent();
 	void addChild(TreeNode* child);
 
-	void addNode(string data);
+	TreeNode* addNode(string data);
 	void listChildren();
 	TreeNode* changeDirectory(string directory);
 };

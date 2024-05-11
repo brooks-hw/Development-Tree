@@ -35,11 +35,12 @@ void TreeNode::addChild(TreeNode* child) {
 	this->children.push_back(child);
 }
 
-void TreeNode::addNode(string data) {	
+TreeNode* TreeNode::addNode(string data) {	
 	//new directory is created with data, parent is set to 'this' which is memory address of called object
 	TreeNode* newDirectory = new TreeNode(data, this);
 	this->children.push_back(newDirectory);
 	cout << "\n";
+	return newDirectory;
 }
 
 void TreeNode::listChildren() {
@@ -54,8 +55,10 @@ TreeNode* TreeNode::changeDirectory(string directory) {
 	for (int i = 0; i < children.size(); ++i) {
 		TreeNode* currNode = children[i];
 		if (directory == currNode->getData()) {
+			cout << "\n";
 			return currNode;
 		}
 	}
-	cout << "\nEntry doesn't exist in this directory";
+	cout << "\n";
+	return nullptr;
 }

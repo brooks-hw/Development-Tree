@@ -11,7 +11,8 @@ int main() {
 
     while (true) {
         string userInput = gatherInput(currDirectory);
-        handleInput(userInput, currDirectory);
+        bool running = handleInput(userInput, currDirectory);
+        if (running != true) break;     //happens if user types 'quit'
     }
 
     delete root;
