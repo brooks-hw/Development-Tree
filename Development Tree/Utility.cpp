@@ -36,14 +36,34 @@ void initializeTree(TreeNode* &root) {
 void writeToFile(TreeNode* node) {
 	std::ifstream inFS("TreeData.txt");
 	string currLine, parent, data;
+	std::vector<string> oldData;
 
 	while (std::getline(inFS, currLine)) {
-		parent = currLine.substr(0, currLine.find(" "));
-		data = currLine.substr(currLine.find(" ") + 1);
+		oldData.push_back(currLine);
 	}
 	inFS.close();
 
 	std::ofstream outFS("TreeData.txt");
+
+	if (oldData.size() == 0) {
+		string newLine = node->getParent()->getData() + " " + node->getData();
+		oldData.insert(oldData.begin(), newLine);
+	}
+
+	auto currentPos = oldData.begin();
+	for (int i = 0; i < oldData.size(); ++i) {
+		parent = currLine.substr(0, currLine.find(" "));
+		if (parent == node->getParent()->getData()) {
+			string newLine = node->getParent()->getData() + " " + node->getData();
+			oldData.insert(oldData.begin() + i, newLine);
+		}
+	}
+
+	for (int i = 0; i < oldData.size(); ++i) {
+		outFS << oldData[i] << "\n";
+	}
+
+	outFS.close();
 	
 	//need to find node's parent directory and insert the newLine of data somewhere in that directory
 	//do this by storing the lines of data in a structure that has their parent and data
