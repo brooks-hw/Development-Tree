@@ -60,6 +60,10 @@ bool handleInput(string userInput, TreeNode*& currDirectory) {
 		else std::cout << "Error \"" << argument << "\" does not exist in this directory\n\n";
 		return true;
 	}
+	case 5: {	//(help)
+		cout << "Fuck you\n";
+		return true;
+	}
 	}
 }
 
@@ -89,6 +93,7 @@ int getChoice(string command) {
 	else if (command == "dir") return 2;
 	else if (command == "find") return 3;
 	else if (command == "cd") return 4;
+	else if (command == "help") return 5;
 	else return 5;	//"delete"
 }
 

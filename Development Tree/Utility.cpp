@@ -43,6 +43,10 @@ void writeToFile(TreeNode* node) {
 	}
 	inFS.close();
 
+	for (int i = 0; i < oldData.size(); ++i) {
+		cout << oldData[i] << "\n";
+	}
+
 	std::ofstream outFS("TreeData.txt");
 
 	if (oldData.size() == 0) {
